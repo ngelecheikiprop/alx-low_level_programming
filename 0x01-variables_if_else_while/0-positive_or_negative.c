@@ -15,7 +15,7 @@ int main(void)
 	/* your code goes there */
 	if(n>0)
 	{
-		printf("%dis positive\n",n)
+		printf("%dis positive\n",n);
 	}
 	else if(n==0)
 	{
