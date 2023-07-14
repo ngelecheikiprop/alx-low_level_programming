@@ -1,0 +1,10 @@
+#include <stdio.h>
+/**
+ * main - this is a entry point
+ *
+ * Return: this returns a zero
+ */
+int main(void)
+{
+	
+}
