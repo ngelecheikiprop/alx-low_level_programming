@@ -7,18 +7,14 @@
  */
 int main(void)
 {
-	int firstNumber;
-	int secondNumber;
-	/*blank line*/
-	for (firstNumber = 1; firstNumber < 10; firstNumber++)
+	int number;
+        /*blank*/
+	for(number = 0; number < 10; number++)
 	{
-		for (secondNumber = 0; secondNumber < 10; secondNumber++)
-		{
-			putchar(firstNumber + '0');
-			putchar(secondNumber + '0');
-			putchar(',');
-			putchar(' ');
-		}
+		putchar(number + '0');
+		putchat(',');
+		putchar(' ');
 	}
+	putchar('\n');
 	return (0);
 }
