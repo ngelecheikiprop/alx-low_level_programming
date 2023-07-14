@@ -12,7 +12,7 @@ int main(void)
 	for(number = 0; number < 10; number++)
 	{
 		putchar(number + '0');
-		putchat(',');
+		putchar(',');
 		putchar(' ');
 	}
 	putchar('\n');
