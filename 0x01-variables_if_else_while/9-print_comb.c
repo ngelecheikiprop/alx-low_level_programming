@@ -9,12 +9,15 @@ int main(void)
 {
 	int number;
 	/*blank*/
-	putchar(0 + '0');
-	for (number = 1; number < 10; number++)
+	for (number = 0; number < 10; number++)
 	{
-		putchar(',');
-		putchar(' ');
 		putchar(number + '0');
+		if (number < 9)
+		{
+			putchar(',');
+		}
+		putchar(' ');
 	}
+	putchar('\n');
 	return (0);
 }
