@@ -10,7 +10,7 @@ int main(void)
 	int i;
 	int j;
 	/*blank line*/
-	for (i = 00; i < 100; i ++)
+	for (i = 00; i < 100; i++)
 	{
 		for (j = i + 1; j < 100; j++)
 		{
