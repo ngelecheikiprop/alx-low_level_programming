@@ -15,7 +15,8 @@ int main(void)
 		if ((i % 3) == 0)
 			mul = mul * i;
 		if((i % 5) == 0)
-			mul = mul * i
+			mul = mul * i;
 	}
-	printf("%d\n",mul)
+	printf("%d\n",mul);
+	return (0);
 }
