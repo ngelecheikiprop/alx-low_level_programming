@@ -21,6 +21,6 @@ int main(void)
 		fn = sn;
 		sn = nn;
 	}
-	printf('\n');
+	printf("\n");
 	return (0);
 }
