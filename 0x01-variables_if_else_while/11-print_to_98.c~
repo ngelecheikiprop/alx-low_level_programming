@@ -1,0 +1,12 @@
+#include "main.h"
+/**
+ *print_to_98 - description
+ *@n: given number
+ *
+ *Return: function of no return
+ */
+void print_to_98(int n)
+{
+	int i;
+	/*blank line*/
+}
