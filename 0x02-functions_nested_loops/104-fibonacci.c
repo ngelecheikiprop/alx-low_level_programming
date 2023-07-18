@@ -22,4 +22,5 @@ int main(void)
 		sn = nn;
 	}
 	printf("\n");
+	return (0);
 }
