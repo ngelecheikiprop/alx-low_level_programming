@@ -14,7 +14,7 @@ int main(void)
 	fn = 1;
 	sn = 2;
 	printf("%lu, %lu", fn, sn);
-	for (i = 3; n <= 98; n++)
+	for (i = 3; i <= 98; i++)
 	{
 		nn = fn + sn;
 		printf(", %lu", nn);
