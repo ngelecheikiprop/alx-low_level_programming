@@ -6,18 +6,18 @@
  */
 int main(void)
 {
-	int fn;
-	int sn;
-	int nn;
-	int i;
+	long int fn;
+	long int sn;
+	long int nn;
+	long int i;
 	/*blank line*/
 	fn = 1;
 	sn = 2;
-	printf("%d, %d", fn, sn);
+	printf("%ld, %ld", fn, sn);
 	for (i = 3; i <= 50; i++)
 	{
 		nn = fn + sn;
-		printf(", %d", nn);
+		printf(", %ld", nn);
 		fn = sn;
 		sn = nn;
 	}
