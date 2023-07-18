@@ -11,4 +11,5 @@ int print_last_digit(int number)
 	/*blank line*/
 	remainder = number % 10;
 	return (remainder);
+	return (remainder);
 }
