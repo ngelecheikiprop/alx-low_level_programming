@@ -5,7 +5,7 @@
  */
 int _putchar(char c)
 {
-	return write(1, &c, 1);
+	return (write(1, &c, 1));
 }
 /**
  * main - this is the entry point
@@ -22,4 +22,5 @@ int main(void)
 	_putchar('h');
 	_putchar('a');
 	_putchar('r');
+	return (0);
 }

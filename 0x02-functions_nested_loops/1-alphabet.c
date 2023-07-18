@@ -1,8 +1,6 @@
-/**including putcahr*/
-int _putchar(char c);
-void print_alphabet(void);
+#include <main.h>
 /**
- *print_alphabet - when called it will print the alphabet of the corresponding ascii character.
+ *print_alphabet - print a to z
  *
  *Return: void
  */
