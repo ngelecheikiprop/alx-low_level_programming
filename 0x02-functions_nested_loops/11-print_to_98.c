@@ -12,7 +12,7 @@ void print_to_98(int n)
 	{
 		for(i = n; i < 98; i++)
 		{
-			if (i > 100)
+			if (i >= 100)
 			{
 				_putchar((i / 100) + '0');
 			}
