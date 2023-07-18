@@ -13,14 +13,14 @@ int main(void)
 	/*blank line*/
 	fn = 1;
 	sn = 2;
-	printf("%d, %d, ", fn, sn);
+	printf("%d, %d", fn, sn);
 	for (i = 3; i <= 50; i++)
 	{
 		nn = fn + sn;
-		printf("%d, ", nn);
+		printf(", %d", nn);
 		fn = sn;
 		sn = nn;
 	}
-	putchar('\n');
+	printf('\n');
 	return (0);
 }
