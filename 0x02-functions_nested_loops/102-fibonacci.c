@@ -9,17 +9,19 @@ int main(void)
 	int fn;
 	int sn;
 	int nn;
+	int i;
 	/*blank line*/
-	fn = 0;
-	sn = 1;
+	fn = 1;
+	sn = 2;
 	nn = 3;
-	printf("%d\n%d\n", fn, sn);
-	for (int i = 3; i <= 50; i++)
+	printf("%d, %d\n", fn, sn);
+	for (i = 3; i <= 50; i++)
 	{
 		nn = fn + sn;
-		printf("%d\n", nn);
+		printf("%d, ", nn);
 		fn = sn;
 		sn = nn;
 	}
+	putchar('\n');
 	return (0);
 }
