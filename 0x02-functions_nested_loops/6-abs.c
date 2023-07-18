@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _abs - findds the absolute of a number
- *@: give the number
+ *@num: give the number
  *
  *Return: returns the absolute number
  */
