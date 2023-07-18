@@ -7,15 +7,15 @@
 int main(void)
 {
 	int i;
-	int mul;
+	int sum;
 	/*blank line*/
-	mul = 1;
+	sum = 0;
 	for (i = 0; i < 1024; i++)
 	{
 		if ((i % 3) == 0)
-			mul = mul * i;
-		if((i % 5) == 0)
-			mul = mul * i;
+			sum = sum + i;
+		if ((i % 5) == 0)
+			sum = sum + i;
 	}
 	printf("%d\n",mul);
 	return (0);
