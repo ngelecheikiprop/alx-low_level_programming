@@ -1,0 +1,8 @@
+#include "main.h"
+/**
+ *print_sign - printing signs
+ *@n: number to check
+ *
+ *Return: returns conditionally
+ */
+int 
