@@ -13,7 +13,6 @@ int main(void)
 	/*blank line*/
 	fn = 1;
 	sn = 2;
-	nn = 3;
 	printf("%d, %d, ", fn, sn);
 	for (i = 3; i <= 50; i++)
 	{
