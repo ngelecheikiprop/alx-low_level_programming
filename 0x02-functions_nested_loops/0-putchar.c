@@ -1,12 +1,4 @@
-/**
- * _putchar - function to print characters
- *
- *Return: nothing is returned
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
+#include <main.h>
 /**
  * main - this is the entry point
  *
