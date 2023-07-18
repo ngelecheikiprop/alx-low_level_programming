@@ -6,17 +6,41 @@
  */
 void print_to_98(int n)
 {
-	int step;
+	int i;
+	int curr;
 	/*blank line*/
-	step = (n <= 98) ? 1 : -1;
-	while ( n != 98)
+	if (n <= 98)
 	{
-		_putchar(n / 100 % 10 + '0');
-		_putchar(n / 10 % 10 + '0');
-		_putchar(n % 10 + '0');
-		_putchar(',');
-		_putchar(' ');
-		n += step;
+		for (i = n; i < 98; i++)
+		{
+			if (i < 0)
+			{
+				curr = -i;
+				_putchar('-');
+			}
+			else
+				curr = i;
+			if (curr >= 100)
+				_putchar(curr / 100 % 10 + '0');
+			if (curr >= 10)
+				_putchar(curr / 10 % 10 + '0');
+			_putchar(curr % 10 + '0');
+			_putchar(',');
+			_putchar(' ');
+		}
+	}
+	else
+	{
+		_for (i = n; i > 98; i--)
+		{
+			if (i >= 100)
+				_putchar(i / 100 % 10 + '0');
+			if (i >= 10)
+				_putchar(i / 10 % 10 + '0');
+			_putchar(i % 10 + '0');
+			_putchar(',');
+			_putchar(' ');
+		}
 	}
 	_putchar('9');
 	_putchar('8');
