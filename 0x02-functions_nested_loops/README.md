@@ -1,0 +1,1 @@
+In this folder I have storedeverything I will be using to learn C.
