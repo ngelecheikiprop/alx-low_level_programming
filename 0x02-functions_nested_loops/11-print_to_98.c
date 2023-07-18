@@ -31,7 +31,7 @@ void print_to_98(int n)
 	}
 	else
 	{
-		_for (i = n; i > 98; i--)
+		for (i = n; i > 98; i--)
 		{
 			if (i >= 100)
 				_putchar(i / 100 % 10 + '0');
