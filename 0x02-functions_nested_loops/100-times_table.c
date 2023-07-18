@@ -11,6 +11,8 @@ void print_times_table(int n)
 	int j;
 	int mul;
 	/*blank line*/
+	if (n <= 15)
+	{
 	for (i = 0; i <= n; i++)
 	{
 		_putchar('0');
@@ -33,5 +35,6 @@ void print_times_table(int n)
 			_putchar(mul % 10 + '0');
 		}
 		_putchar('\n');
+	}
 	}
 }
