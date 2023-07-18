@@ -5,10 +5,10 @@
  *
  *Return: returns the absolute number
  */
-int _abs(int)
+int _abs(int num)
 {
-	if (int < 0)
-		return (-int);
+	if (num < 0)
+		return (-num);
 	else
-		return (int);
+		return (num);
 }
