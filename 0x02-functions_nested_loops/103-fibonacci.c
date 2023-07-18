@@ -14,6 +14,7 @@ int main(void)
 	/*blank*/
 	fn = 1;
 	sn = 2;
+	sum = 0;
 	sum = 2 + sum;
 	for (i = 3; i <= 50; i++)
 	{
