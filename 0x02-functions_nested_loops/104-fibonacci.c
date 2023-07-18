@@ -6,10 +6,10 @@
  */
 int main(void)
 {
-	unsigned long int fn;
-	unsigned long int sn;
-	unsigned long int nn;
-	unsigned long int i;
+	unsigned long fn;
+	unsigned long sn;
+	unsigned long nn;
+	unsigned long i;
 	/*blank line*/
 	fn = 1;
 	sn = 2;
