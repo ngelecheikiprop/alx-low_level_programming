@@ -9,7 +9,9 @@ int print_last_digit(int number)
 {
 	int remainder;
 	/*blank line*/
+	if (number < 0)
+		number = -number;
 	remainder = number % 10;
-	_putchar(_abs(remainder) + '0');
+	_putchar(remainder + '0');
 	return (remainder);
 }
