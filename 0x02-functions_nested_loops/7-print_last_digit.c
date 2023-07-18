@@ -10,6 +10,6 @@ int print_last_digit(int number)
 	int remainder;
 	/*blank line*/
 	remainder = number % 10;
-	_putchar(abs(remainder) + '0');
+	_putchar(_abs(remainder) + '0');
 	return (remainder);
 }
