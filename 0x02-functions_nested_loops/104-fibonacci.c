@@ -6,18 +6,18 @@
  */
 int main(void)
 {
-	long double fn;
-	long double sn;
-	long double nn;
+        __uint128_t fn;
+	__uint128_t sn;
+	__uint128_t nn;
 	int i;
 	/*blank line*/
 	fn = 1;
 	sn = 2;
-	printf("%.0Lf, %.0Lf", fn, sn);
+	printf("%llu, %llu", fn, sn);
 	for (i = 3; i <= 98; i++)
 	{
 		nn = fn + sn;
-		printf(", %.0Lf", nn);
+		printf(", %llu", nn);
 		fn = sn;
 		sn = nn;
 	}
