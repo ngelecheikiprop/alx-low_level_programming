@@ -11,8 +11,8 @@ int main(void)
 	__uint128_t nn;
 	int i;
 	/*blank line*/
-	fn = 1;
-	sn = 2;
+	fn = 1U;
+	sn = 2U;
 	printf("%llu, %llu", fn, sn);
 	for (i = 3; i <= 98; i++)
 	{
