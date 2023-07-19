@@ -6,23 +6,23 @@
  */
 int main(void)
 {
-        __uint128_t fn;
-	__uint128_t sn;
-	__uint128_t nn;
+        long double fn;
+	long double sn;
+	long double nn;
 	int i;
 	/*blank line*/
-	fn = 1U;
-	sn = 2U;
-	printf("%llu, %llu", fn, sn);
+	fn = 1;
+	sn = 2;
+	printf("%.0Lf, %.0Lf", fn, sn);
 	for (i = 3; i <= 98; i++)
 	{
 		nn = fn + sn;
 		if (i == 96 | i == 97)
-			printf(", %llu", nn + 1);
+			printf(", %.0Lf", nn + 1);
 		else if (i == 98)
-			printf(", %llu", nn + 2);
+			printf(", %.0Lf", nn + 2);
 		else
-			printf(", %llu", nn);
+			printf(", %.0Lf", nn);
 		fn = sn;
 		sn = nn;
 	}
