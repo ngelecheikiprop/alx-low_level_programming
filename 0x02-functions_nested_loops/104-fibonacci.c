@@ -14,7 +14,7 @@ int main(void)
 	unsigned long int large;
 	int i;
 	/*blank line*/
-	large = 10000000000000000000;
+	large = 1000000000000000000UL;
 	fn = 1;
 	sn = 2;
 	printf("%lu, %lu", fn, sn);
