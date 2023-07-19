@@ -21,9 +21,14 @@ int main(void)
 	for (i = 3; i <= 98; i++)
 	{
 		nn = fn + sn;
+		if (nn > 1000)
+		{
 		part1 = nn / large;
 		part2 = nn % large;
 	        printf(", %lu%lu", part1, part2);
+		}
+		else
+			printf(", %lu", nn);
 		fn = sn;
 		sn = nn;
 	}
