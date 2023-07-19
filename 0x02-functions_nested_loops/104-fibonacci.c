@@ -6,10 +6,10 @@
  */
 int main(void)
 {
-	unsigned long double fn;
-	unsigned long double sn;
-	unsigned long double nn;
-	unsigned long double i;
+	long double fn;
+	long double sn;
+	long double nn;
+	long double i;
 	/*blank line*/
 	fn = 1;
 	sn = 2;
