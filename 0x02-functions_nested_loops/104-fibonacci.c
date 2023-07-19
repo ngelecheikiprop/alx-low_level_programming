@@ -17,7 +17,12 @@ int main(void)
 	for (i = 3; i <= 98; i++)
 	{
 		nn = fn + sn;
-		printf(", %llu", nn);
+		if (i == 96 | i == 97)
+			printf(", %llu", nn + 1);
+		else if (i == 98)
+			printf(", %llu", nn + 2);
+		else
+			printf(", %llu", nn);
 		fn = sn;
 		sn = nn;
 	}
