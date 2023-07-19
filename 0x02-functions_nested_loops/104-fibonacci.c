@@ -17,7 +17,7 @@ int main(void)
 	for (i = 3; i <= 98; i++)
 	{
 		nn = fn + sn;
-		if (i == 96 | i == 97)
+		if ((i == 96) | (i == 97))
 			printf(", %.0Lf", nn + 1);
 		else if (i == 98)
 			printf(", %.0Lf", nn + 2);
