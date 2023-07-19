@@ -11,17 +11,17 @@ int main(void)
 	unsigned long int nn;
 	unsigned long int part1;
 	unsigned long int part2;
-	int large;
+	unsigned long int large;
 	int i;
 	/*blank line*/
-	large = 10000;
+	large = 10000000000000000000;
 	fn = 1;
 	sn = 2;
 	printf("%lu, %lu", fn, sn);
 	for (i = 3; i <= 98; i++)
 	{
 		nn = fn + sn;
-		if (nn > 1000)
+		if (nn > large)
 		{
 		part1 = nn / large;
 		part2 = nn % large;
