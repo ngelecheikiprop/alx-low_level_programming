@@ -22,6 +22,10 @@ int main(void)
 		if (i == 98)
 			nn = nn + 2;
 		printf(", %.0Lf", nn);
+		if (i > 92 && i < 98)
+			nn = nn - 1;
+		if (i == 98)
+			nn = nn -2;
 		fn = sn;
 		sn = nn;
 	}
