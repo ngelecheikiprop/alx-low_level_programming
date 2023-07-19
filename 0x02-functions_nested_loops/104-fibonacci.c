@@ -6,24 +6,24 @@
  */
 int main(void)
 {
-        long double fn;
-	long double sn;
-	long double nn;
-	long double part1;
-	long double part2;
+        unsigned long int fn;
+	unsigned long int sn;
+	unsigned long int nn;
+	unsigned long int part1;
+	unsigned long int part2;
 	int large;
 	int i;
 	/*blank line*/
 	large = 10000;
 	fn = 1;
 	sn = 2;
-	printf("%.0Lf, %.0Lf", fn, sn);
+	printf("%lu, %lu", fn, sn);
 	for (i = 3; i <= 98; i++)
 	{
 		nn = fn + sn;
 		part1 = nn / large;
 		part2 = nn % large;
-	        printf(", %.0Lf%.0Lf", part1, part2);
+	        printf(", %lu%lu", part1, part2);
 		fn = sn;
 		sn = nn;
 	}
