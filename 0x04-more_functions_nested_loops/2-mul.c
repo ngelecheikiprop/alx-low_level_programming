@@ -12,5 +12,5 @@ int mul(int a, int b)
 	/*blank*/
 	mul = a * b;
 	/*blank*/
-	return mul;
+	return (mul);
 }
