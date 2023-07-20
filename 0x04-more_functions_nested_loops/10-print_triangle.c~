@@ -1,0 +1,30 @@
+#include "main.h"
+/**
+ *print_triangle - prints a triangle, followed by a new line.
+ *@size - size of triangle you want
+ *Return: function of no return
+ */
+void print_triangle(int size)
+{
+	int i;/*counter*/
+	int spaces;/*inner counter*/
+	int nOfHashes;
+
+	for (i = 1; i <= size; i++)
+	{
+		spaces = size - i;
+		nOfHashes = size - spaces;
+		while (spaces > 0)
+		{
+			_putchar(' ');
+			spaces--;
+		}
+		while (nOfHashes > 0)
+		{
+			_putchar('#');
+			nOfHashes--;
+		}
+		_putchar('\n');
+	}
+	/*_putchar('\n');*/
+}
