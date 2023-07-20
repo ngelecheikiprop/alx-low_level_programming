@@ -27,6 +27,7 @@ int main(void)
 			printf("%d ", i);
 		}
 	}
+	putchar('\b');
 	putchar('\n');
 	return (0);
 }
