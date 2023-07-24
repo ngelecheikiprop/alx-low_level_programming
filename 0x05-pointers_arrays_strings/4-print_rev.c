@@ -9,8 +9,15 @@
 void print_rev(char *s)
 {
 	int len;
+	char *p;
 
-	len = _strlen(s);
+	len = 0;
+	p = s;
+	while (*p != '\0')
+	{
+		len++;
+		p++;
+	}
 	while (len > 0)
 	{
 		_putchar(*(s + len));
