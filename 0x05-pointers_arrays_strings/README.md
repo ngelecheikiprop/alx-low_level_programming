@@ -1,0 +1,1 @@
+Today am learnig about array, pointers and strings. My task solutions are here.
