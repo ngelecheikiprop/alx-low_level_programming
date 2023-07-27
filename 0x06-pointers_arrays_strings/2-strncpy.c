@@ -2,6 +2,7 @@
   *_strncpy - copies a string
   *@dest: destination
   *@src: from
+  *@n: number
   *n: number of characters
   *
   *Return: char
