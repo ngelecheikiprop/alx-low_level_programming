@@ -1,7 +1,7 @@
 /**
-  *string_toupper - changes all lowercase 
+  *string_toupper - changes all lowercase
   *letters of a string to uppercase
-  *@char: what to change
+  *@c: what to change
   *
   *Return: character
   */
