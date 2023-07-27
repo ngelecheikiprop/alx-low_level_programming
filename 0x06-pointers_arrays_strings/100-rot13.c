@@ -15,5 +15,7 @@ char *rot13(char *c)
 		if ((c[i] >= 'a' && c[i] <= 'z'))
 			c[i] = ((c[i] - 'a' + 13) % 26) + 'a';
 	}
+	c[i] = '\0';
 	return ((char *)c);
 }
+
