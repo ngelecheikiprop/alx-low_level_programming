@@ -6,26 +6,26 @@
   */
 char to_upper(char ch)
 {
-	return ch >= 'a' && ch <= 'z' ? ch - ('a' - 'A') : ch;
+	return (ch >= 'a' && ch <= 'z' ? ch - ('a' - 'A') : ch);
 }
 
 /**
   *is_separator - checks if it is a seperator
-  *@ch - character to check
+  *@ch: - character to check
   *
   *Return: int
   */
 int is_separator(char ch)
 {
 	return (ch == ' ' || ch == '\t' || ch == '\n' || ch == ',' || ch == ';' ||
-			ch == '.' || ch == '!' || ch == '?' 
+			ch == '.' || ch == '!' || ch == '?'
 			|| ch == '"' || ch == '(' ||
 			ch == ')' || ch == '{' || ch == '}');
 }
 
 /**
   *cap_string - capitalizes all words of a string.
-  *@c: pointer to string 
+  *@s: pointer to string
   *
   *Return: char
   */
