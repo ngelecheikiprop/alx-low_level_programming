@@ -34,7 +34,8 @@ char *cap_string(char *s)
 	int i = 0;
 	int newWord = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	s[0] = to_upper(s[0]);
+	for (i = 1; s[i] != '\0'; i++)
 	{
 		if (is_separator(s[i]))
 			newWord = 1;
