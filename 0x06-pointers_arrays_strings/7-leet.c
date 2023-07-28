@@ -8,7 +8,7 @@
 char *leet(char *str)
 {
 	char leet_chars[] = {'A', 'a', 'E', 'e', 'O', 'o', 'T', 't', 'L', 'l'};
-	char leet_replacements[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
+	char leet_replacements[] = {'4', '3', '0', '7', '1'};
 	int i;
 	int j;
 
