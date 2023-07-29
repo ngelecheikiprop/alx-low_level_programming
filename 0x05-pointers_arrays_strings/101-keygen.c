@@ -12,10 +12,10 @@ int main(void)
 	int options = sizeof(charSet) - 1;
 	int i;
 	int takeIndex;
-	char password[10];
+	char password[20];
 
 	srand(time(NULL));
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 20; i++)
 	{
 		takeIndex = rand() % options;
 		password[i] = charSet[takeIndex];
