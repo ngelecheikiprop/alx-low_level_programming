@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+#include "limits.h"
 /**
  *_atoi - convert a string to an integer.
  * @s: string
@@ -25,7 +25,9 @@ int _atoi(char *s)
 		if (s[len] == '-')
 			sign = sign * -1;
 	}
-	if (sign < 0)
+	if (num == INT_MIN)
+		/*take direct*/;
+	else if (sign < 0)
 		num = -num;
 	return (num);
 }
