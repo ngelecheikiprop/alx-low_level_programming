@@ -13,6 +13,8 @@ char *_strchr(char *s, char c)
 
 	for (i = 0; *(myString + i) != c; i++)
 	{
+		if (*(myString + i) == '\0')
+			return ((void *)0);
 	}
 	return (s + i);
 }
