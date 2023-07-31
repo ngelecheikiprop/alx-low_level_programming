@@ -8,7 +8,6 @@
   */
 char *_strpbrk(char *s, char *accept)
 {
-	int found = 0;
 	int i;
 	int j;
 
@@ -18,11 +17,9 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (s[i] == accept[j])
 			{
-				found = 1;
+				return (s + i);
 			}
 		}
-		if (found)
-			break;
 	}
-	return (s + i);
+	return (((void *)0));
 }
