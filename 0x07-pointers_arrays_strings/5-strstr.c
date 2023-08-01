@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
   *_strstr - checks if string is there
   *@haystack: string to scan'
@@ -9,7 +10,7 @@
 char *_strstr(char *haystack, char *needle)
 {
 	int i, j, k;
-	char *not_found = (char *)1;
+	/*char *not_found = (char *)1;*/
 
 	for (i = 0; haystack[i] != '\0'; i++)
 	{
@@ -21,5 +22,6 @@ char *_strstr(char *haystack, char *needle)
 			return ((char *)&haystack[i]);
 		}
 	}
-	return (not_found);
+	/*return (not_found);*/
+	return (NULL);
 }
