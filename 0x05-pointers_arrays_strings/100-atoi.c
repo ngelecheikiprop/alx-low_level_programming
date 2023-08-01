@@ -25,13 +25,9 @@ int _atoi(char *s)
 		if (s[len] == '-')
 			sign = sign * -1;*/
 		if (s[len] == '-')
-		{
 			sign *= -1;
-		}
 		else if (s[len] >= '0' && s[len] <= '9')
-		{
 			num = num * 10 + (s[len] - '0');
-		}
 		else if (num > 0)
 			break;
 	}
