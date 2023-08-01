@@ -1,5 +1,4 @@
 #include "main.h"
-#include "limits.h"
 /**
  *_atoi - convert a string to an integer.
  * @s: string
@@ -8,7 +7,7 @@
  */
 int _atoi(char *s)
 {
-	int len;
+	unsigned int len;
 	int num = 0;
 	int sign = 1;
 	/*int numberExtracted = 0;*/
