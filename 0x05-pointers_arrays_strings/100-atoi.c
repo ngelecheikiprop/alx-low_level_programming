@@ -25,9 +25,5 @@ int _atoi(char *s)
 		if (s[len] == '-')
 			sign = sign * -1;
 	}
-	if (num == INT_MIN)
-		/*take direct*/;
-	else if (sign < 0)
-		num = -num;
-	return (num);
+	return (num * sign);
 }
