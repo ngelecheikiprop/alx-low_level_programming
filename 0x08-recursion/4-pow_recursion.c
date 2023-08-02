@@ -2,7 +2,7 @@
 /**
   *_pow_recursion -  value of x raised to the power of y.
   *@x: number
-  *y: power
+  *@y: power
   *
   *Return: nothing
   */
