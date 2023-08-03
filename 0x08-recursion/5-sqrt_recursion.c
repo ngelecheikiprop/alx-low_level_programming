@@ -3,7 +3,7 @@
 /**
   *_sqrt - finds the square root
   *@n: starting number
-  *@number = number
+  *@number: number
   *
   *Return:the square root if found
   * -1 if sqyare root is not found
@@ -11,6 +11,7 @@
 int _sqrt(int n, int number)
 {
 	int square = n * n;
+
 	if (square == number)
 		return (n);
 	else if (square > number)
