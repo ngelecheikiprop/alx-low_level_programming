@@ -1,4 +1,19 @@
 #include "main.h"
+#include <stdio.h>
+/**
+  *find_len - finds lenght of string
+  *@s : string
+  *@len: previous len
+  *
+  *Return: length of string
+  */
+int find_len(char *s, int len)
+{
+	if (s[len] == '\0')
+		return (len);
+	else
+		return (find_len(s, len + 1));
+}
 /**
   *_check - checks a palindrome
   *@s: the string
@@ -27,8 +42,6 @@ int is_palindrome(char *s)
 {
 	int len;
 
-	for (len = 0; s[len] != '\0'; len++)
-	{
-	}
+	len = find_len(s, 0);
 	return (_check(s, 0, len - 1));
 }
