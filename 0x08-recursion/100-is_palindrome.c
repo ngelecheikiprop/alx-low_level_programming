@@ -33,7 +33,7 @@ int _check(char *s, int start, int end)
 		return (0);
 }
 /**
-  *int is_palindrome - checks if a string is a palindrome
+  *is_palindrome - checks if a string is a palindrome
   *@s: string to inspect
   *
   *Return: 1 if palindrome
