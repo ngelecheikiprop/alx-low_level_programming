@@ -15,7 +15,10 @@ int main(int argc, char *argv[])
 	int mul;
 
 	if (argc <= 1)
+	{
 		printf("Error\n");
+		return (1);
+	}
 	else
 	{
 		num1 = atoi(argv[1]);
