@@ -18,6 +18,7 @@ char *str_concat(char *s1, char *s2)
 	char *string2;
 	unsigned int i;
 	unsigned int j = 0;
+	char *newString;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -28,18 +29,18 @@ char *str_concat(char *s1, char *s2)
 	string1 = strdup(s1);
 	string2 = strdup(s2);
 	neededlen = len1 + len2 + 1;
-	s1 = malloc(sizeof(char) * neededlen);
-	if (s1 == NULL)
+	newString = malloc(sizeof(char) * neededlen);
+	if (newString == NULL)
 		return NULL;
 	for (i = 0; i < len1; i++)
 	{
-		s1[i] = string1[i];
+		newString[i] = string1[i];
 	}
 	j = i + j;
 	for (i = 0; i < len2; i++)
 	{
-		s1[j + i] = string2[i];
+		newString[j + i] = string2[i];
 	}
-	s1[j + i] = '\0';
-	return (s1);
+	newString[j + i] = '\0';
+	return (newString);
 }
