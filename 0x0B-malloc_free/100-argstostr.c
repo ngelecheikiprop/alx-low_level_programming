@@ -13,14 +13,17 @@ char *argstostr(int ac, char **av)
 	int i;
 	char *newstr;
 	int length = 0;
+	int newline = 1;
+	int nullbyte = 1;
 
 	if ((ac == 0) || (av == NULL))
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-		length  += strlen(av[i]);
+		length += strlen(av[i]);
+		length += newline;
 	}
-	length = length + ac + 2;
+	length = length + nullbyte;
 	newstr = malloc(length * sizeof(char));
 	if (newstr == NULL)
 		return (NULL);
@@ -31,5 +34,6 @@ char *argstostr(int ac, char **av)
 		strcat(newstr, av[i]);
 		strcat(newstr, "\n");
 	}
+	newstr[length - 1] = 0;
 	return (newstr);
 }
