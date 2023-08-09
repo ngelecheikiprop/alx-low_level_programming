@@ -3,7 +3,7 @@
 #include <string.h>
 /**
   *argstostr - changes arguments to string
-  *@c: the number of arguments
+  *@ac: the number of arguments
   *@av: vector of arguments to make string
   *
   *Return: one string with all arguments
