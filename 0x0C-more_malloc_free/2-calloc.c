@@ -10,13 +10,13 @@
   */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void **ptr = malloc(sizeof(void *) * nmemb);
+	void **ptr = malloc(sizeof(void *) * size);
 	unsigned int i;
 	unsigned int j;
 
 	if ((nmemb == 0) || (size == 0))
 		return (NULL);
-	for (i = 0; i < nmemb; i++)
+	for (i = 1; i < nmemb; i++)
 	{
 		ptr[i] = malloc(sizeof(char) * size);
 		if (ptr == NULL)
@@ -24,8 +24,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 			for (j = 0; j <= i; j++)
 			{
 				free(ptr[j]);
-				return (NULL);
 			}
+			return (NULL);
 		}
 	}
 	memset(ptr, 0, (size * nmemb));
