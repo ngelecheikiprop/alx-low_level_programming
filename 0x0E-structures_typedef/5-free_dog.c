@@ -8,6 +8,6 @@
  */
 void free_dog(dog_t *d)
 {
-	if (d != NULL)
+	if (d == sizeof(dog_t))
 		free(d);
 }
