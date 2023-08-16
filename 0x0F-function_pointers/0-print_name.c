@@ -1,7 +1,7 @@
 /**
  *print_name - function that prints a name
  *@name: name to print
- *f:pointer to function
+ *@f:pointer to function
  *
  * Return: nothing
  */
