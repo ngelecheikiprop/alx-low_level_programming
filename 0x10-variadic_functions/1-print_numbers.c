@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include <stddef.h>
 /**
  * print_numbers - prints the numbers given
  * @seperator: what to print in between
@@ -19,7 +20,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	printf("%d", va_arg(numbers, int));
 	for(i = 1; i < n; i++)
 	{
-		if (separator)
+		if (separator != NULL)
                         printf("%s", separator);
 		printf("%d", va_arg(numbers, int));
 	}
