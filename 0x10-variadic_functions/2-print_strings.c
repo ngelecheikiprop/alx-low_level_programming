@@ -4,7 +4,7 @@
 #include <stddef.h>
 /**
  * print_strings - prints the given strings
- * @seperator: what goes between the strings
+ * @separator: what goes between the strings
  * @n:the number of strings to print
  *
  * Return: nothing just prints
@@ -15,6 +15,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	char *s;
 
+	if (n == 0)
+		return;
 	va_start(strings, n);
 	s = va_arg(strings, char *);
 	printf("%s", s);
