@@ -13,7 +13,13 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	int separator = 0;
 	int len = strlen(format);
+	char *str;
 
+	if (format == NULL)
+	{
+		printf("\n")
+		return;
+	}
 	va_start(ap, format);
 	while (format[i] != '\0')
 	{
@@ -32,24 +38,21 @@ void print_all(const char * const format, ...)
 				separator = 1;
 				break;
 			case ('s'):
-				if (va_arg(ap, char *) == NULL)
+				str = va_arg(ap, char *);
+				if (s == NULL)
 				{
-					va_arg(ap, char *);
 					printf("(nil)");
 					separator = 1;
 					break;
 				}
-				printf("%s", va_arg(ap, char *));
+				printf("%s", s);
 				separator = 1;
 				break;
 			default:
-				break;
+				i++;
+				continue;
 		}
-		if ((separator) && (i != len - 1))
-		{
-			printf(", ");
-			separator = 0;
-		}
+		printf(", ");
 		i++;
 	}
 	va_end(ap);
