@@ -14,11 +14,6 @@ void print_all(const char * const format, ...)
 	int separator = 0;
 	int len = strlen(format);
 
-	if (format == NULL)
-	{
-		printf("\n");
-		return;
-	}
 	va_start(ap, format);
 	while (format[i] != '\0')
 	{
