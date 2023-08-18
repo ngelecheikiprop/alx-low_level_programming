@@ -34,6 +34,7 @@ void print_all(const char * const format, ...)
 			case ('s'):
 				if (va_arg(ap, char *) == NULL)
 				{
+					va_arg(ap, char *);
 					printf("(nil)");
 					separator = 1;
 					break;
