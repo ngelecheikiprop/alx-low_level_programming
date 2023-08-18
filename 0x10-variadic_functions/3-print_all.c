@@ -12,6 +12,7 @@ void print_all(const char * const format, ...)
 	va_list ap;
 	int i = 0;
 	char *str;
+	char *spr;
 
 	if (format == NULL)
 	{
@@ -24,28 +25,28 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case ('c'):
-				printf("%c", va_arg(ap, int));
+				printf("%s%c", spr, va_arg(ap, int));
 				break;
 			case ('i'):
-				printf("%d", va_arg(ap, int));
+				printf("%s%d", spr, va_arg(ap, int));
 				break;
 			case ('f'):
-				printf("%f", va_arg(ap, double));
+				printf("%s%f", spr, va_arg(ap, double));
 				break;
 			case ('s'):
 				str = va_arg(ap, char *);
 				if (str == NULL)
 				{
-					printf("(nil)");
+					printf("%s(nil)", spr);
 					break;
 				}
-				printf("%s", str);
+				printf("%s%s", spr, str);
 				break;
 			default:
 				i++;
 				continue;
 		}
-		printf(", ");
+		spr = ", ";
 		i++;
 	}
 	va_end(ap);
