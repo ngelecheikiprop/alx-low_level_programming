@@ -3,7 +3,7 @@
 #include <string.h>
 /**
  * print_all - prints everything all tyoes
- * @format: the sequnce to follow
+ * @format: the sequnce to follow - cant find
  *
  * Return: nothing
  */
