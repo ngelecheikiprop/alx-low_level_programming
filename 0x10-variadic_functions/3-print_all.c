@@ -14,11 +14,8 @@ void print_all(const char * const format, ...)
 	char *str;
 	char *spr = "";
 
-	if (format == NULL)
+	if (format)
 	{
-		printf("\n");
-		return;
-	}
 	va_start(ap, format);
 	while (format[i] != '\0')
 	{
@@ -26,26 +23,21 @@ void print_all(const char * const format, ...)
 		{
 			case ('c'):
 				printf("%s%c", spr, va_arg(ap, int));
-				spr = "";
 				break;
 			case ('i'):
 				printf("%s%d", spr, va_arg(ap, int));
-				spr = "";
 				break;
 			case ('f'):
 				printf("%s%f", spr, va_arg(ap, double));
-				spr = "";
 				break;
 			case ('s'):
 				str = va_arg(ap, char *);
 				if (str == NULL)
 				{
 					printf("%s(nil)", spr);
-					spr = "";
 					break;
 				}
 				printf("%s%s", spr, str);
-				spr = "";
 				break;
 			default:
 				i++;
@@ -55,5 +47,6 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	va_end(ap);
+	}
 	printf("\n");
 }
