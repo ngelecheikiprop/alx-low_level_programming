@@ -14,6 +14,11 @@ void print_all(const char * const format, ...)
 	int separator = 0;
 	int len = strlen(format);
 
+	if (format == NULL)
+	{
+		printf("\n");
+		return;
+	}
 	va_start(ap, format);
 	while (format[i] != '\0')
 	{
@@ -32,6 +37,12 @@ void print_all(const char * const format, ...)
 				separator = 1;
 				break;
 			case ('s'):
+				if (va_arg(ap, char *) == NULL)
+				{
+					printf("(nil)");
+					separator = 1;
+					break;
+				}
 				printf("%s", va_arg(ap, char *));
 				separator = 1;
 				break;
