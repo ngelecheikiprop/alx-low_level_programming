@@ -1,10 +1,14 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
-
+/**
+ * print_all - prints everything all tyoes
+ * @format: the sequnce to follow
+ *
+ * Return: nothing
+ */
 void print_all(const char * const format, ...)
 {
-	
 	va_list ap;
 	int i = 0;
 	int separator = 0;
@@ -34,7 +38,7 @@ void print_all(const char * const format, ...)
 			default:
 				break;
 		}
-		if((separator) && (i != len - 1))
+		if ((separator) && (i != len - 1))
 		{
 			printf(", ");
 			separator = 0;
