@@ -1,21 +1,35 @@
 #include "lists.h"
-
+/**
+  *add_node_end - adds a node at the end
+  *@head: pointer that stores location of pointer to begining
+  *of list
+  *@str:the string to add to the end of the list
+  *Return: pointer to the last element
+  */
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *current;
-	list_t *new = malloc(sizeof(list_t));
+	list_t *new;
 	char *strcpy;
 
-	if(new == NULL)
-		return (NULL);
+	new = malloc(sizeof(list_t));
 	if (str == NULL)
 		return (NULL);
-	strcpy= strdup(str);
+	if (new == NULL)
+		return (NULL);
+	strcpy = strdup(str);
 	if (strcpy == NULL)
+	{
+		free(new);
 		return (NULL);
+	}
 	new->str = strcpy;
-	if(new->str == NULL)
+	if (new->str == NULL)
+	{
+		free(new);
+		free(strcpy);
 		return (NULL);
+	}
 	new->len = strlen(str);
 	new->next = NULL;
 	if (*head == NULL)
@@ -31,28 +45,4 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 
 	return (new);
-	/*while (current_node->next != NULL)
-	{
-		current_node = current_node->next;
-	}
-	current_node->next = malloc(sizeof(list_t));
-	(current_node->next)->str = strdup(str);
-	(current_node->next)->len = strlen(str);
-	(current_node->next)->next = NULL;
-	return (current_node->next);
-	*list_head *current;
-
-	current = malloc(sizeof(list_t));
-	if (current == NULL)
-	{
-		return (NULL);
-	}
-	current = *head;
-	while (current != NULL)
-	{
-		current= current->next;
-	}
-	current->str = strdup(str);
-	current->len = strlen(str);
-	return (current);*/
 }
