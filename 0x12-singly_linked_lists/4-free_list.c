@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
-  *list_t - frees a list
-  *given the head
-  *
-  *Return: nothing
-  */
+ *free_list - frees a list
+ *given the head
+ *@head:start of the list
+ *Return: nothing
+ */
 void free_list(list_t *head)
 {
 	list_t *temp;
