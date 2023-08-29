@@ -2,7 +2,7 @@
 /**
   *add_nodeint_end - add a node at the end of a list
   *@head: the start of the list
-  @n: the number to add
+  *@n: the number to add
   *
   *Return: the address of new element
   */
@@ -29,6 +29,5 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		}
 		current->next = new;
 	}
-	
 	return (new);
 }
