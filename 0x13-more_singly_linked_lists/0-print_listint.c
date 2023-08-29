@@ -11,7 +11,7 @@ size_t print_listint(const listint_t *h)
 	size_t no_of_nodes = 0;
 
 	if (h == NULL)
-		return (NULL);
+		return (0);
 	while (h != NULL)
 	{
 		no_of_nodes++;
