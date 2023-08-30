@@ -1,5 +1,10 @@
 #include "3-calc.h"
-
+/**
+  *main - test code
+  *@argc: the number of arguments
+  *@argv: the storage
+  *Return: always 0
+  */
 int main(int argc, char *argv[])
 {
 	int (*fun)(int, int);
