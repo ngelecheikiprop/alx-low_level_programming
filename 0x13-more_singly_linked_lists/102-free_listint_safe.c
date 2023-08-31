@@ -7,7 +7,9 @@
   */
 size_t free_listint_safe(listint_t **h)
 {
-	int count;
+	size_t count = 0;
+
+	h = h;
 	count++;
 	return (count);
 }
