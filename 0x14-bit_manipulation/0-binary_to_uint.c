@@ -7,39 +7,18 @@
   */
 unsigned int binary_to_uint(const char *b)
 {
-	int i = 0;
-	size_t j = 0;
-	int mul = 1;
-	unsigned int currNum = 0;
-	unsigned int decNum = 0;
+	unsigned int result = 0; 
+	/*unsigned int bit_value = 1;*/
+	int index = 0;
 
 	if (b == NULL)
 		return (0);
-	while (j < strlen(b))
+	while (b[index] != '\0')
 	{
-		mul = mul * 2;
-		j++;
-	}
-	mul = mul / 2;
-	while (b[i] != '\0')
-	{
-		if (b[i] == '1')
-		{
-			currNum = 1 * mul;
-			decNum = currNum + decNum;
-			mul = mul / 2;
-		}
-		else if(b[i] == '0')
-		{
-			currNum = 0 * mul;
-			mul = mul / 2;
-			decNum = decNum + currNum;
-		}
-		else
-		{
+		if (b[index] != '0' && b[index] != '1')
 			return (0);
-		}
-		i++;
+		result = (result << 1) + (b[index] - '0');
+		index++;
 	}
-	return (decNum);
+	return (result);
 }
