@@ -22,8 +22,8 @@ size_t print_listint_safe(const listint_t *head)
 			if (s == f)
 			{
 				printf("[%p] %d\n", (void *)s,s->n);
-				printf("[%p] %d\n", (void *)s,s->next->n);
-				printf("-> [%p] %d\n", (void *)s,s->next->next->n);
+				printf("[%p] %d\n", (void *)s->next,s->next->n);
+				printf("-> [%p] %d\n", (void *)s->next->next,s->next->next->n);
 				exit(98);
 			}
 		}
