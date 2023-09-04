@@ -1,7 +1,4 @@
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 /**
   *read_textfile - reads text file and prints
   *it in standard output
@@ -33,7 +30,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buffer);
 		return (0);
 	}
-	bytes = write(1, buffer, bytes);
+	bytes = write(STDOUT_FILENO, buffer, bytes);
 	if (bytes == -1)
 	{
 		free(buffer);
