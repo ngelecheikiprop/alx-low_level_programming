@@ -23,13 +23,22 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
+	{
+		free(buffer);
 		return (0);
+	}
 	bytes = read(fd, buffer, letters);
 	if (bytes == -1)
+	{
+		free(buffer);
 		return (0);
+	}
 	bytes = write(1, buffer, letters);
 	if (bytes == -1)
+	{
+		free(buffer);
 		return (0);
+	}
 	close(fd);
 	free(buffer);
 	return (bytes);
