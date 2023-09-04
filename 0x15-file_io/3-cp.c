@@ -27,7 +27,7 @@ int main(int ac, char *av[])
 		exit(98);
 	}
 	cl = close(fdr);
-	if (fdr == -1)
+	if (cl == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdr);
 		exit(100);
