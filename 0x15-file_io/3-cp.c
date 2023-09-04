@@ -11,7 +11,7 @@ int main(int ac, char *av[])
 {
 	int fdr;
 	int fdw;
-	ssize_t byte_read, byte_wrote;
+	ssize_t byte_read, byte_wrote, cl;
 	char buffer[1024];
 
 	if (ac != 3)
@@ -26,12 +26,24 @@ int main(int ac, char *av[])
 		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", av[1]);
 		exit(98);
 	}
+	cl = close(fdr);
+	if (fdr == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdr);
+		exit(100);
+	}
 	fdw = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	byte_wrote = write(fdw, buffer, byte_read);
 	if (fdw == -1 || byte_wrote == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
+	}
+	cl = close(fdw);
+	if (cl == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdw);
+		exit(100);
 	}
 	return (0);
 }
