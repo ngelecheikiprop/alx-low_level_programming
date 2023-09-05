@@ -11,7 +11,7 @@ int main(int ac, char *av[])
 {
 	int fdr;
 	int fdw;
-	ssize_t byte_read, byte_wrote, cl;
+	ssize_t byte_read = 0, byte_wrote = 0;
 	char buffer[1024];
 
 	if (ac != 3)
@@ -20,27 +20,36 @@ int main(int ac, char *av[])
 		exit(97);
 	}
 	fdr = open(av[1], O_RDONLY);
-	byte_read = read(fdr, buffer, 1024);
-	if (fdr == -1 || byte_read == -1)
+	if (fdr == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	cl = close(fdr);
-	if (cl == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdr);
-		exit(100);
-	}
 	fdw = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
-	byte_wrote = write(fdw, buffer, byte_read);
-	if (fdw == -1 || byte_wrote == -1)
+	if (fdw == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-	cl = close(fdw);
-	if (cl == -1)
+	while ( (byte_read = read(fdr, buffer, 1024)) > 0)
+	{
+		 byte_wrote = write(fdw, buffer, byte_read);
+		 if (byte_wrote == -1)
+		 {
+			 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+			 close(fdr);
+			 close(fdw);
+			 exit(99);
+		 }
+	}
+	if (byte_read == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		close(fdr);
+		close(fdw);
+		exit(98);
+	}
+	if ((close(fdr) == -1) || (close(fdw) == -1))
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdw);
 		exit(100);
