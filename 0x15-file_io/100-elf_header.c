@@ -11,8 +11,9 @@ void display_error(const char *msg) {
 }
 
 void display_elf_header_info(const Elf64_Ehdr *header) {
+	int i = 0;
     printf("Magic: ");
-    for (int i = 0; i < EI_NIDENT; i++) {
+    for (i = 0; i < EI_NIDENT; i++) {
         printf("%02x ", header->e_ident[i]);
     }
     printf("\n");
@@ -32,19 +33,24 @@ void display_elf_header_info(const Elf64_Ehdr *header) {
     printf("Entry point address: %#lx\n", (unsigned long)header->e_entry);
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) 
+{
+	int fd;
+	const char *filename;
+	Elf64_Ehdr header;
+
     if (argc != 2) {
         display_error("Usage: elf_header elf_filename");
     }
 
-    const char *filename = argv[1];
-    int fd = open(filename, O_RDONLY);
+    filename = argv[1];
+    fd = open(filename, O_RDONLY);
 
     if (fd == -1) {
         display_error("Error opening file");
     }
 
-    Elf64_Ehdr header;
+    
     if (read(fd, &header, sizeof(header)) != sizeof(header)) {
         close(fd);
         display_error("Error reading ELF header");
