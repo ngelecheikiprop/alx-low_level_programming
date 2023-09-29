@@ -12,4 +12,5 @@ section .text
         mov rsi, hello
         call printf
         pop rbp
+	mov rax, 0
         ret
