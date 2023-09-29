@@ -8,7 +8,7 @@
   */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *s, *f;
+	const listint_t *s, *f, *loopAt;
 	size_t count = 0;
 
 	if (head == NULL)
@@ -21,8 +21,15 @@ size_t print_listint_safe(const listint_t *head)
 		f = f->next->next;
 		if (s == f)
 		{
+			loopAt = s;
 			printf("-> [%p] %d\n", (void *)s->next->next, s->next->next->n);
-			exit(98);
+			loopAt = s = s->next->next;
+			while (s != loopAt)
+			{
+				printf("[%p] %d\n", (void *)s, s->n);
+				s = s->next;
+			}
+			exit(100);
 		}
 	}
 	return (count);
