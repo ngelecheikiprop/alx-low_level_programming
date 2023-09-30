@@ -13,7 +13,7 @@ size_t print_listint_safe(const listint_t *head)
 	int i;
 
 	if (head == NULL)
-		exit(98);
+		return (count);
 	current = head;
 	while (current != NULL)
 	{
@@ -22,7 +22,7 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			if (visited[i] == current)
 			{
-				printf("->[%p] %d\n", (void *)current, current->n);
+				printf("-> [%p] %d\n", (void *)current, current->n);
 				return (count);
 			}
 		}
@@ -38,7 +38,5 @@ size_t print_listint_safe(const listint_t *head)
 		count++;
 		current = current->next;
 	}
-	for (i = 0; i < 10000; i++)
-		visited[i] = NULL;
 	return (count);
 }
