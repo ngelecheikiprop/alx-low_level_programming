@@ -1,37 +1,34 @@
 #include "lists.h"
+
 /**
-  *find_listint_loop - finds a loop in list
-  *@head: this is the start of the list
+  * find_listint_loop - finds a loop in list
+  * @head: this is the start of the list
   *
-  *Return: the address of where the loop starts
+  * Return: the address of where the loop starts, or NULL if no loop
   */
 listint_t *find_listint_loop(listint_t *head)
 {
-	const listint_t *visited[10000] = {NULL};
-	int i;
+	listint_t *slow = head->next;
+	listint_t *fast = head->next->next;
 
-	if (head == NULL)
-		return (NULL);
-	while (head != NULL)
+	if (head == NULL || head->next == NULL)
 	{
-
-		for (i = 0; i < 10000; i++)
-		{
-			if (visited[i] == head)
-			{
-				return (head);
-			}
-		}
-		for (i = 0; i < 10000; i++)
-		{
-			if (visited[i] == NULL)
-			{
-				visited[i] = head;
-				break;
-			}
-		}
-
-		head = head->next;
+		return (NULL);
 	}
-	return (NULL);
+	while (fast && fast->next)
+	{
+		if (slow == fast)
+		{
+			slow = head;
+			while (slow != fast)
+			{
+				slow = slow->next;
+				fast = fast->next;
+			}
+		return (slow);
+		}
+		slow = slow->next;
+		fast = fast->next->next;
+		}
+		return (NULL);
 }
