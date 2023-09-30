@@ -8,29 +8,34 @@
   */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *s, *f, *loopAt;
+	const listint_t *current, *visited[10000] = {NULL};
 	size_t count = 0;
+	int i;
 
 	if (head == NULL)
 		exit(98);
-	s = f = head;
-	while (s && f && f->next)
+	current = head;
+	while (current != NULL)
 	{
-		printf("[%p] %d\n", (void *)s, s->n);
-		s = s->next;
-		f = f->next->next;
-		if (s == f)
+		printf("[%p] %d\n", (void *)current, current->n);
+		count++;
+		for (i = 0; i < 10000; i++)
 		{
-			loopAt = s;
-			printf("-> [%p] %d\n", (void *)s->next->next, s->next->next->n);
-			loopAt = s = s->next->next;
-			while (s != loopAt)
+			if (visited[i] == current)
 			{
-				printf("[%p] %d\n", (void *)s, s->n);
-				s = s->next;
+				printf("->[%p] %d\n", (void *)current, current->n);
+				return (count);
 			}
-			exit(100);
 		}
+		for (i = 0; i < 10000; i++)
+		{
+			if (visited[i] == NULL)
+			{
+				visited[i] = current;
+				break;
+			}
+		}
+		current = current->next;
 	}
 	return (count);
 }
