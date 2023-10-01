@@ -6,12 +6,12 @@
  *
  * Return: nothing
  */
-void print_opcodes(int bytes)
+void print_opcodes(const void* address, int size)
 {
-	unsigned char *ptr = (unsigned char *)print_opcodes;
+	unsigned char *ptr = (unsigned char *)address;
 	int i;
 
-	for (i = 0; i < bytes; i++)
+	for (i = 0; i < size; i++)
 	{
 		printf("%02x ", *ptr);
 		ptr++;
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
-	print_opcodes(bytes);
+	print_opcodes(&main, bytes);
 	return (0);
 }
 
