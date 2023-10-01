@@ -2,11 +2,12 @@
 #include <stdlib.h>
 /**
  * print_opcodes - prints the opcodes
- * @bytes: bytes given by the user
+ * @address: where the main function is found
+ * @size: bytes given by the user
  *
  * Return: nothing
  */
-void print_opcodes(const void* address, int size)
+void print_opcodes(const void *address, int size)
 {
 	unsigned char *ptr = (unsigned char *)address;
 	int i;
