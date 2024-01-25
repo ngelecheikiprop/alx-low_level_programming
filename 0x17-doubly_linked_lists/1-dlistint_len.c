@@ -1,19 +1,23 @@
 #include "lists.h"
 /**
- *dlistint_len - prins values in a doubly linked list
- *@h:the head of the list
- *Return: the number of nodes
+ * dlistint_len -  a function that returns the number of elements.
+ *
+ * @h: the begining of the lists
+ *
+ *Return: number of elements
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-	size_t i = 0;
+	size_t no_of_nodes = 0;
 
 	if (h == NULL)
-		return (0);
+	{
+		return (no_of_nodes);
+	}
 	while (h)
 	{
 		h = h->next;
-		i++;
+		no_of_nodes = no_of_nodes + 1;
 	}
-	return (i);
+	return (no_of_nodes);
 }
